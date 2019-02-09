@@ -41,8 +41,8 @@ contains:
 NumPy have scientific uses. NumPy is also an efficient
 multi-dimensional container of generic data. Numpy can be seamlessly and speedily
 integrated into a wide variety of projects because NumPy supports arbitary data types.
-We are going to explore numpy through a simple example,
-implementing the Game of Life.
+In the next section, we are going to explore NumPy through a simple example:
+the Game of Life.
 
 
 
