@@ -49,13 +49,13 @@ the Game of Life.
 The Game of Life                                                               
 ===============================================================================
 
-Numpy is slanted toward scientific computing and we will consider in this section
+Numpy is slanted toward scientific computing. In this section, we will consider
 the `game of life <http://en.wikipedia.org/wiki/Conway's_Game_of_Life>`_ by
-John Conway which is one of the earliest example of cellular automata (see
+John Conway. The Game of Life is one of the earliest example of cellular automata (see
 figure below). Those cellular automaton can be conveniently considered as array
-of cells that are connected together through the notion of neighbours. We will
-show in the following sections implementation of this game using pure python
-and numpy in order to illustrate main differences with python and numpy.
+of cells that are connected together through the notion of neighbours. In the following
+sections, we will implement this game using python and numpy. The implementation will
+illustrate main differences between python and numpy.
 
 .. figure:: figures/game-of-life.png
 
