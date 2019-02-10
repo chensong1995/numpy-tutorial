@@ -77,8 +77,8 @@ universe will evolve on its own.
 The universe of the Game of Life is an infinite two-dimensional orthogonal grid
 of square cells, each of which is in one of two possible states, live or
 dead. Every cell interacts with its eight neighbours, which are the cells that
-are directly horizontally, vertically, or diagonally adjacent. At each step in
-time, the following transitions occur:
+are directly horizontally, vertically, or diagonally adjacent. At each timestep,
+the following transitions occur:
 
 1. Any live cell with fewer than two live neighbours dies, as if by needs caused
    by underpopulation.
@@ -160,7 +160,7 @@ neighbours. First step is to count neighbours::
                       + Z[x-1][y+1]+Z[x][y+1]+Z[x+1][y+1]
       return N
 
-To iterate one step in time, we then simply count the number of neighbours for
+To iterate one timestep, we then simply count the number of neighbours for
 each internal cell and we update the whole board according to the 4 rules::
 
   def iterate(Z):
