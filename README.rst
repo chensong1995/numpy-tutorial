@@ -70,10 +70,9 @@ illustrate main differences between python and numpy.
 
 The Game of Life, also known simply as Life, is a cellular automaton devised
 by the British mathematician John Horton Conway in 1970.  It is the
-best-known example of a cellular automaton. The "game" is actually a
-zero-player game, meaning that its evolution is determined by its initial
-state, needing no input from human players. One interacts with the Game of
-Life by creating an initial configuration and observing how it evolves.
+best-known example of a cellular automaton. The Game of Life does not involve human
+players. In the Game of Life, human create an initial state of the universe, and the
+universe will evolve on its own.
 
 The universe of the Game of Life is an infinite two-dimensional orthogonal grid
 of square cells, each of which is in one of two possible states, live or
