@@ -49,11 +49,11 @@ the Game of Life.
 The Game of Life                                                               
 ===============================================================================
 
-Numpy is slanted toward scientific computing and we'll consider in this section
+Numpy is slanted toward scientific computing and we will consider in this section
 the `game of life <http://en.wikipedia.org/wiki/Conway's_Game_of_Life>`_ by
 John Conway which is one of the earliest example of cellular automata (see
 figure below). Those cellular automaton can be conveniently considered as array
-of cells that are connected together through the notion of neighbours. We'll
+of cells that are connected together through the notion of neighbours. We will
 show in the following sections implementation of this game using pure python
 and numpy in order to illustrate main differences with python and numpy.
 
@@ -102,7 +102,7 @@ pure function of the one before.)  The rules continue to be applied repeatedly
 to create further generations.
 
 
-We'll first use a very simple setup and more precisely, we'll use the `glider
+We will first use a very simple setup and more precisely, we will use the `glider
 <http://en.wikipedia.org/wiki/Glider_(Conway's_Life)>`_ pattern that is known to
 move one step diagonally in 4 iterations as illustrated below:
 
@@ -284,7 +284,7 @@ have immediate impact on ``Z``:
 
 We set the value of ``A[0,0]`` to 9 and we see immediate change in ``Z[1,1]``
 because ``A[0,0]`` actually corresponds to ``Z[1,1]``. This may seem trivial
-with such simple arrays, but things can become much more complex (we'll see
+with such simple arrays, but things can become much more complex (we will see
 that later). If in doubt, you can check easily if an array is part of another
 one::
 
@@ -300,7 +300,7 @@ Counting neighbours
 .. note::
 
    It is not always possible to vectorize computations and it requires
-   generally some experience. You'll acquire this experience by using numpy (of
+   generally some experience. You will acquire this experience by using numpy (of
    course) but also by asking questions on the `mailing list
    <http://mail.scipy.org/mailman/listinfo/numpy-discussion>`_
 
@@ -360,7 +360,7 @@ of ``Z``. This concept of broadcasting is quite powerful and it will take you
 some time before masterizing it fully (if even possible).
 
 However, in the present case (counting neighbours if you remember), we won't
-use broadcasting (uh ?). But we'll use vectorize computation using the
+use broadcasting (uh ?). But we will use vectorize computation using the
 following code::
 
   >>> N = np.zeros(Z.shape, dtype=int)
@@ -451,7 +451,7 @@ instead take advantages of numpy features the following way.
       Z[1:-1,1:-1][birth | survive] = 1
       return Z
 
-If you look at the ``birth`` and ``survive`` lines, you'll see that these two
+If you look at the ``birth`` and ``survive`` lines, you will see that these two
 variables are indeed arrays. The right-hand side of these two expressions are
 in fact logical expressions that will result in boolean arrays (just print them
 to check). We then set all ``Z`` values to 0 (all cells become dead) and we use
@@ -483,7 +483,7 @@ You can download the full script here: `game-of-life-numpy.py <scripts/game-of-l
 Getting bigger
 ++++++++++++++
 
-While numpy works perfectly with very small arrays, you'll really benefit from
+While numpy works perfectly with very small arrays, you will really benefit from
 numpy power with big to very big arrays. So let us reconsider the game of life
 with a bigger array. First, we won't initalize the array by hand but initalize
 it randomly::
@@ -575,13 +575,13 @@ single array. Numpy allows to do that with the notion of `structured array
   [('U', '<f8'), ('V', '<f8')]
 
 The size of the array is (n+2,n+2) since we need the borders when computing the
-neighbours. However, we'll compute differential equation only in the center
+neighbours. However, we will compute differential equation only in the center
 part, so we can already creates some useful views of this array::
 
   >>> U,V = Z['U'], Z['V']
   >>> u,v = U[1:-1,1:-1], V[1:-1,1:-1]
 
-Next, we need to compute the Laplacian and we'll use a discrete approximation
+Next, we need to compute the Laplacian and we will use a discrete approximation
 obtained via the `finite difference method
 <http://en.wikipedia.org/wiki/Discrete_Laplace_operator#Finite_Differences>`_ using the same vectorization as for the Game of Life::
 
